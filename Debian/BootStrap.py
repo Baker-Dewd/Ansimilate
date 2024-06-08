@@ -3,7 +3,8 @@
   become: yes
   tasks:
 
-## name:  numbers aid in diagnosis and support. See:
+## name: Whats with the Numbers in each name statement? 
+## name: Numbers aid in diagnosis and support. See:
 ## https://github.com/kungfootek/ansible-page-numbers
 
 ## Update all the things.
@@ -96,6 +97,7 @@
             - ca-certificates
 #            - virtualbox
 #            - virtualbox-ext-pack
+            - ufw
             - vagrant
 # Set Container environment
     - name: 40. Clone Cli-Foo Environment files
@@ -126,7 +128,7 @@
 ######################################################################
 ## Notes:                                                           ##
 ## - Playbook saved with .py to leverage syntax highlighting in Vim.##
-## -
+## - https://github.com/Baker-Dewd/ansible-page-numbers
 ######################################################################
 ## TODO : 
 # Clone Cli-Foo and Install
