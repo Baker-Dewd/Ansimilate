@@ -1,6 +1,8 @@
 ---
 - hosts: all
+  vars_files: ~/Auths/ansible_vault_pass
   become: yes
+  become_method: sudo
   tasks:
 
 ## name: Whats with the Numbers in each name statement? 
@@ -42,6 +44,9 @@
             - git
             - curl
 ## Monitoring
+            - policycoreutils 
+            - selinux-basics 
+            - selinux-utils
             - iotop
             - iftop
             - htop
@@ -62,6 +67,7 @@
             - gawk
             - sed
             - gh
+            - lynx
 ## Languages
 #       - go
             - pip
@@ -121,6 +127,11 @@
             - { src: '/tmp/envvars/DotFiles/vimrc', dest: '/root/.vimrc' }
             - { src: '/tmp/envvars/DotFiles/vimrc', dest: '/etc/vimrc' }
             - { src: '/tmp/envvars/DotFiles/sysstat', dest: '/etc/cron.d/sysstat' }
+    
+    - name: 60. Set sleep behaviour so I can close the laptop lids. 
+      copy:
+            src: 'files/sleep.conf'
+            dest: '/etc/systemd/sleep.conf'
 
 ## Need to copy entire ~/Bin folder over for root and vagrant
 

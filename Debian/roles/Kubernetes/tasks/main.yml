@@ -1,0 +1,21 @@
+---
+#- name: 10. [ Kubernetes Role - tasks ] install_repos.yml
+#  include: install_repos.yml
+
+- name: 20. [ Kubernetes Role - tasks ] disable_swap.yml
+  include: disable_swap.yml
+
+- name: 30. [ Kubernetes Role - main tasks ] timezone_ntp.yml
+  include: timezone_ntp.yml
+
+- name: 40. [ Kubernetes Role - tasks ] kernel_modules_sysctl.yml
+  include: kernel_modules_sysctl.yml
+
+- name: 50. [ Kubernetes Role - tasks ] host_file.yml
+  include: host_file.yml
+
+#- name: 60. [ Kubernetes Role - tasks ] setup_crio.yml
+#  include: setup_crio.yml
+
+#- name: 70. [ Kubernetes Role - tasks ] k8s_packages.yml
+#  include: k8s_packages.yml

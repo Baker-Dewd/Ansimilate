@@ -1,0 +1,21 @@
+---
+- name: Setup Proxy
+  hosts: kubez
+  vars_files: ~/Auths/ansible_vault_pass
+  become: yes
+  become_method: sudo
+  gather_facts: yes
+  vars:
+    KUBERNETES_VERSION: v1.31
+    CRIO_VERSION: v1.31
+    timezone: "America/Chicago"                          # Timezone to set on all nodes
+    k8s_cni: calico                                      # calico. Offers the most versitile networking capabilities.
+    container_runtime: cri-o                             # https://kubevious.io/blog/post/comparing-kubernetes-container-network-interface-cni-providers
+    pod_network_cidr: "10.200.0.0/16"                    # pod subnet
+    # Docker proxy support
+    setup_proxy: false                                   # Set to true to configure proxy
+    proxy_server: "proxy.example.com:8080"               # Proxy server address and port
+    docker_proxy_exclude: "localhost,127.0.0.1"          # Adresses to exclude from proxy
+  roles:
+    - Kubernetes
+

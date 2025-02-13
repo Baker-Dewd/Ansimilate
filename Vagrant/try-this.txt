@@ -1,0 +1,4 @@
+Use Vagrant on hardware to create clusters for  Obv. reasons: 
+
+https://github.com/cri-o/packaging/blob/91df5f7/test/deb/Vagrantfile
+

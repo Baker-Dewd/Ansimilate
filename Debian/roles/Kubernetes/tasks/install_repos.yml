@@ -1,0 +1,11 @@
+---
+- name: 10. ~ install_repos.yml / crio
+  ansible.builtin.template:
+    src: 'crio.repo.j2'
+    dest: /etc/<apt-location>/kubernetes.repo
+
+- name: 20. ~ install_repos.yml / Kubernetes
+  ansible.builtin.template:
+    src: 'kubernetes.repo.j2'
+    dest: /etc/<apt-location>/kubernetes.repo
+
