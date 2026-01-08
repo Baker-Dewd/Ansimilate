@@ -1,8 +1,8 @@
 ---
 - hosts: all
-  vars_files: ~/Auths/ansible_vault_pass
+#  vars_files: ~/Auths/ansible_vault_pass
   become: yes
-  become_method: sudo
+  become_method: enable
   tasks:
 
 ## name: Whats with the Numbers in each name statement? 
@@ -43,6 +43,7 @@
             - wget
             - git
             - curl
+            - apt-transport-https
 ## Monitoring
             - policycoreutils 
             - selinux-basics 
@@ -89,7 +90,7 @@
             - liblzma-dev
             - llvm
 ## Remote storage solutions
-## s3, ceph, etc.            
+## s3, ceph, igluster, etc.            
             - nfs-kernel-server
 ## Orchestration
             - ansible
@@ -128,10 +129,10 @@
             - { src: '/tmp/envvars/DotFiles/vimrc', dest: '/etc/vimrc' }
             - { src: '/tmp/envvars/DotFiles/sysstat', dest: '/etc/cron.d/sysstat' }
     
-    - name: 60. Set sleep behaviour so I can close the laptop lids. 
-      copy:
-            src: 'files/sleep.conf'
-            dest: '/etc/systemd/sleep.conf'
+#    - name: 60. Set sleep behaviour so I can close the laptop lids. 
+#      copy:
+#            src: 'files/sleep.conf'
+#            dest: '/etc/systemd/sleep.conf'
 
 ## Need to copy entire ~/Bin folder over for root and vagrant
 

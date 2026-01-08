@@ -6,8 +6,8 @@
   become_method: sudo
   gather_facts: yes
   vars:
-    KUBERNETES_VERSION: v1.31
-    CRIO_VERSION: v1.31
+    KUBERNETES_VERSION: v1.30
+    CRIO_VERSION: v1.30
     timezone: "America/Chicago"                          # Timezone to set on all nodes
     k8s_cni: calico                                      # calico. Offers the most versitile networking capabilities.
     container_runtime: cri-o                             # https://kubevious.io/blog/post/comparing-kubernetes-container-network-interface-cni-providers
